@@ -6,11 +6,11 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # ── Brand palette ──────────────────────────────────────────────────────────────
-OBSIDIAN = "#FFFFFF"
-CREAM = "#1A1A1A"
+OBSIDIAN = "#0D0D0D"
+CREAM = "#F5F0E8"
 GOLD = "#C9A84C"
 GOLD_LIGHT = "#E8D5A3"
-MUTED = "#6A6A6A"
+MUTED = "#8A8A8A"
 POSITIVE = "#4CAF7D"
 NEGATIVE = "#E05C5C"
 ACCENT_BLUE = "#5B8DB8"
@@ -20,28 +20,28 @@ TREND_COLORS = [GOLD, "#B87E4B", "#8FAF7A", ACCENT_BLUE, "#A67CB5"]
 LAYOUT_BASE = dict(
     paper_bgcolor="rgba(0,0,0,0)",
     plot_bgcolor="rgba(0,0,0,0)",
-    font=dict(family="Georgia, serif", color="#1A1A1A", size=13),
+    font=dict(family="Georgia, serif", color=CREAM, size=13),
     margin=dict(l=20, r=20, t=40, b=20),
     xaxis=dict(
         showgrid=False,
         zeroline=False,
         tickfont=dict(color=MUTED, size=11),
-        linecolor="#DDDDDD",
+        linecolor="#2A2A2A",
     ),
     yaxis=dict(
         showgrid=True,
-        gridcolor="#EEEEEE",
+        gridcolor="#1E1E1E",
         zeroline=False,
         tickfont=dict(color=MUTED, size=11),
-        linecolor="#DDDDDD",
+        linecolor="#2A2A2A",
     ),
     legend=dict(
         bgcolor="rgba(0,0,0,0)",
-        font=dict(color="#1A1A1A", size=12),
+        font=dict(color=CREAM, size=12),
     ),
     hoverlabel=dict(
-        bgcolor="#FFFFFF",
-        font_color="#1A1A1A",
+        bgcolor="#1A1A1A",
+        font_color=CREAM,
         bordercolor=GOLD,
         font_family="Georgia, serif",
     ),
@@ -53,7 +53,7 @@ def apply_theme(fig, title=""):
     if title:
         layout["title"] = dict(
             text=title,
-            font=dict(color="#1A1A1A", size=15, family="Georgia, serif"),
+            font=dict(color=CREAM, size=15, family="Georgia, serif"),
             x=0.02,
         )
     fig.update_layout(**layout)
