@@ -102,3 +102,24 @@ def overview_kpis(eng_df, rec_df):
         "revenue_delta": delta(latest_rec["revenue_influenced"], prev_rec["revenue_influenced"]),
         "style_match_score": float(latest_rec["style_match_score"]),
     }
+
+def influencer_data():
+    seed()
+    influencers = [
+        {"id": "A", "tier": "Macro"},
+        {"id": "B", "tier": "Mid"},
+        {"id": "C", "tier": "Mid"},
+        {"id": "D", "tier": "Micro"},
+    ]
+    rows = []
+    for inf in influencers:
+        rows.append({
+            "name": f"{inf['tier']} · Influencer {inf['id']}",
+            "tier": inf["tier"],
+            "reach": int(np.random.uniform(10_000, 500_000)),
+            "engagement_rate": round(np.random.uniform(0.02, 0.12), 3),
+            "post_conversion": round(np.random.uniform(0.01, 0.08), 3),
+            "revenue_driven": int(np.random.uniform(5_000, 120_000)),
+            "style_match": round(np.random.uniform(0.60, 0.95), 2),
+        })
+    return pd.DataFrame(rows)
